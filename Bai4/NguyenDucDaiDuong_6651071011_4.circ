@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="2.7.1" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <main name="main"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings/>
+  <toolbar/>
+  <circuit name="main">
+    <a name="circuit" val="main"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(100,100)" to="(210,100)"/>
+    <wire from="(210,100)" to="(210,110)"/>
+    <wire from="(210,110)" to="(220,110)"/>
+    <wire from="(100,140)" to="(150,140)"/>
+    <wire from="(180,140)" to="(210,140)"/>
+    <wire from="(210,140)" to="(210,130)"/>
+    <wire from="(210,130)" to="(220,130)"/>
+    <wire from="(240,80)" to="(240,100)"/>
+    <wire from="(260,120)" to="(320,120)"/>
+    <wire from="(240,140)" to="(240,170)"/>
+    <wire from="(240,170)" to="(250,170)"/>
+    <wire from="(280,170)" to="(320,170)"/>
+    <comp lib="0" loc="(100,100)" name="Pin">
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A[3:0]"/>
+    </comp>
+    <comp lib="0" loc="(100,140)" name="Pin">
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="B[3:0]"/>
+    </comp>
+    <comp lib="1" loc="(180,140)" name="NOT Gate">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="0" loc="(240,80)" name="Constant">
+      <a name="facing" val="south"/>
+      <a name="value" val="0x1"/>
+    </comp>
+    <comp lib="3" loc="(260,120)" name="Adder">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="0" loc="(320,120)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="4"/>
+      <a name="label" val="Difference[3:0]"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="1" loc="(280,170)" name="NOT Gate"/>
+    <comp lib="0" loc="(320,170)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Borrow"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+  </circuit>
+</project>
